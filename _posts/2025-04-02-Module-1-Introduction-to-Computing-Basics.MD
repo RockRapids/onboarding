@@ -105,9 +105,9 @@ An operating system (OS) is software that manages computer hardware and provides
 
 ### Common Issues and Solutions
 
-Ask Gemini or your favorite AI for a full background on each of these common issues.
+Ask Gemini or your favorite AI for at least five takes on a full background on each of these common issues, such as ["What are the common **maintenance** best practices for any operating system?](https://g.co/gemini/share/88b9ee306a2d) ... *because the people using your app are not probably going to do these things, but you have to know this stuff in order to develop apps for what people practically do, not what they should do.*
 
-#### [Slow Performance](https://g.co/gemini/share/88b9ee306a2d)
+#### [Slow Performance]
 - Check active programs and close unnecessary ones
 - Look for programs consuming excessive resources using Task Manager (Windows) or Activity Monitor (Mac)
 - Restart the computer
@@ -169,7 +169,7 @@ Ask Gemini or your favorite AI for a full background on each of these common iss
 
 3. **Troubleshooting Scenario**: Your computer is running slowly. Document the steps you would take to diagnose and resolve the issue.
 
-4. **Search Engine Practice**: Try finding solutions to these problems using a search engine:
+4. **Search Engine Practice**: Try finding solutions to these problems using a ***just a plain old search engine***, ie because it'll give you an appreciation for what AI provides:
    - How to check if a process is using too much CPU
    - How to connect your computer to a wireless printer
    - What to do if a website isn't loading
