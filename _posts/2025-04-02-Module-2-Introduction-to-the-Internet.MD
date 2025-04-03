@@ -1,0 +1,210 @@
+---
+layout: post
+title:  "Module 2: Introduction to the Internet"
+date:   2025-04-02 8:00:00
+categories: Foundations
+---
+
+# Module 2: Introduction to the Internet
+
+## Overview
+This module explores the fundamental concepts behind the Internet, how it works, and the key technologies that enable web development. Understanding these principles will provide essential context for your journey as a web developer.
+
+## Learning Objectives
+By the end of this module, you will be able to:
+- Explain how the Internet functions at a basic level
+- Understand the client-server model and its role in web architecture
+- Describe how browsers interpret and display web content
+- Identify key networking concepts relevant to web development
+
+## Section 1: How the Internet Works
+
+### The Internet: A Network of Networks
+The Internet is a global system of interconnected computer networks that communicate using standardized protocols. Rather than being a single entity, it's a vast collection of networks owned by different organizations that agree to connect and exchange information.
+
+#### Key Infrastructure Components
+- **Backbone Networks**: High-capacity data routes operated by major telecommunications companies
+- **Internet Exchange Points (IXPs)**: Physical locations where different networks connect to exchange traffic
+- **Internet Service Providers (ISPs)**: Companies that provide Internet access to end users
+- **Data Centers**: Facilities that house servers and networking equipment
+
+### How Data Travels Across the Internet
+When you access a website or send an email, your data doesn't travel directly from point A to point B. Instead:
+
+1. **Data Packaging**: Information is broken into small packets
+2. **Routing**: Each packet may take a different path through various networks
+3. **Packet Switching**: Routers direct packets based on network conditions and efficiency
+4. **Reassembly**: Packets are reassembled at the destination
+
+#### Internet Protocols
+Communication across this complex network is possible because of standardized protocols:
+
+- **TCP/IP (Transmission Control Protocol/Internet Protocol)**: The fundamental communication language of the Internet
+  - **IP**: Handles addressing and routing of packets
+  - **TCP**: Ensures reliable delivery by checking if packets arrive correctly
+
+- **DNS (Domain Name System)**: Translates human-readable domain names (like example.com) into IP addresses (like 93.184.216.34)
+
+### Visualizing the Journey of a Web Request
+When you type a URL into your browser:
+
+1. Your browser asks the DNS server to translate the domain name to an IP address
+2. Your device establishes a connection with the server at that IP address
+3. Your browser sends an HTTP request to the server
+4. The server processes the request and sends back an HTTP response
+5. Your browser renders the content for you to see
+
+## Section 2: The Client-Server Model
+
+### Understanding Clients and Servers
+The web operates primarily on a client-server architecture:
+
+- **Clients**: Devices or applications that request and consume resources or services
+  - Web browsers (Chrome, Firefox, Safari)
+  - Mobile apps
+  - IoT devices
+
+- **Servers**: Computers or systems that store, process, and deliver resources or services
+  - Web servers (Apache, Nginx)
+  - Application servers
+  - Database servers
+  - File servers
+
+### How Clients and Servers Communicate
+Communication between clients and servers follows a request-response pattern:
+
+1. Client sends a request (e.g., "Please send me the homepage")
+2. Server processes the request
+3. Server sends back a response (e.g., HTML, images, data)
+4. Client processes and displays the response
+
+### Types of Servers in Web Development
+Modern web applications often involve multiple specialized servers:
+
+- **Web Servers**: Deliver static content (HTML, CSS, images)
+- **Application Servers**: Execute business logic and generate dynamic content
+- **Database Servers**: Store and retrieve application data
+- **Caching Servers**: Temporarily store frequently accessed data for faster retrieval
+- **Content Delivery Networks (CDNs)**: Distributed servers that deliver content based on user location
+
+### Cloud Computing and Serverless
+The client-server model has evolved with cloud computing:
+
+- **Infrastructure as a Service (IaaS)**: Rent virtual servers and infrastructure
+- **Platform as a Service (PaaS)**: Use pre-configured platforms for application deployment
+- **Software as a Service (SaaS)**: Access applications over the internet
+- **Serverless Computing**: Run code without managing servers, paying only for execution time
+
+## Section 3: Introduction to Browsers and HTTP
+
+### How Web Browsers Work
+Browsers are complex applications that serve as the primary client for accessing web content:
+
+#### Key Browser Components
+- **User Interface**: The visual parts you interact with (address bar, buttons, tabs)
+- **Browser Engine**: Coordinates between the UI and the rendering engine
+- **Rendering Engine**: Parses HTML and CSS to display content
+- **Networking**: Handles HTTP requests and responses
+- **JavaScript Engine**: Executes JavaScript code
+- **UI Backend**: Draws basic widgets like dropdown menus and windows
+- **Data Storage**: Manages cookies, local storage, and cached files
+
+### The Rendering Process
+When a browser receives HTML content:
+
+1. **Parsing**: Converts HTML into a Document Object Model (DOM)
+2. **Style Calculation**: Applies CSS rules to create the CSSOM (CSS Object Model)
+3. **Layout**: Determines the size and position of each element
+4. **Painting**: Converts the layout into pixels on the screen
+5. **Compositing**: Combines different painted layers
+
+### HTTP: The Protocol of the Web
+HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the web:
+
+#### HTTP Request Components
+- **Method**: The action to perform (GET, POST, PUT, DELETE, etc.)
+- **URL**: The address of the resource
+- **Headers**: Additional information about the request
+- **Body**: Data sent to the server (for methods like POST)
+
+#### HTTP Response Components
+- **Status Code**: Indicates the result of the request (200 OK, 404 Not Found, etc.)
+- **Headers**: Metadata about the response
+- **Body**: The actual content (HTML, JSON, image data, etc.)
+
+### HTTPS: Secure Communication
+HTTPS (HTTP Secure) adds encryption to protect data in transit:
+
+- Uses SSL/TLS protocols to encrypt communications
+- Prevents eavesdropping and tampering
+- Verified by certificates issued by trusted authorities
+- Indicated by a padlock icon in browsers
+
+## Section 4: Basic Networking Concepts
+
+### IP Addresses and Ports
+- **IP Address**: A unique identifier for a device on a network
+  - IPv4: 32-bit addresses (e.g., 192.168.1.1)
+  - IPv6: 128-bit addresses for the expanding Internet
+- **Ports**: Virtual endpoints that specify which application or service to connect to
+  - HTTP: Port 80
+  - HTTPS: Port 443
+  - FTP: Port 21
+
+### Local vs. Remote Networks
+- **Local Area Networks (LANs)**: Connected devices in a small area (home, office)
+- **Wide Area Networks (WANs)**: Connect LANs across larger geographical areas
+- **Internet**: The global network of networks
+
+### Common Networking Tools for Developers
+- **Ping**: Test if a server is reachable
+- **Traceroute/Tracert**: View the path data takes to reach a destination
+- **Netstat**: Display network connections and statistics
+- **Wireshark**: Analyze network traffic in detail
+- **Browser Developer Tools**: Network tab for analyzing HTTP requests
+
+### Bandwidth, Latency, and Performance
+- **Bandwidth**: Maximum amount of data that can be transferred in a given time
+- **Latency**: Time delay between request and response
+- **Round-Trip Time (RTT)**: Time for a request to reach the server and return
+- **Throughput**: Actual amount of data transferred successfully
+
+## Practical Exercises
+
+1. **DNS Exploration**: Use the `nslookup` or `dig` command to find the IP addresses of three popular websites.
+
+2. **Network Tools**: Run `ping` and `tracert`/`traceroute` commands to a website and analyze the results.
+
+3. **Browser Inspection**: Use your browser's developer tools to:
+   - View the network requests made when loading a webpage
+   - Examine request and response headers
+   - Analyze the loading time of different resources
+
+4. **HTTP Headers Experiment**: Use an online tool like RequestBin or Postman to send HTTP requests with different headers and analyze the responses.
+
+## Additional Resources
+
+### Websites
+- [MDN Web Docs: How the Internet Works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+- [How DNS Works](https://howdns.works/) - Interactive comic explaining DNS
+- [HTTP Status Codes](https://httpstatuses.com/) - Reference for HTTP status codes
+
+### Tools
+- [Wireshark](https://www.wireshark.org/) - Network protocol analyzer
+- [Postman](https://www.postman.com/) - API testing tool
+- [RequestBin](https://requestbin.com/) - Inspect and debug webhook requests
+
+### Videos
+- [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=7_LPdttKXPc)
+- [DNS Explained](https://www.youtube.com/watch?v=72snZctFFtA)
+- [HTTP and the Web](https://www.youtube.com/watch?v=kBXQZMmiA4s)
+
+## Next Steps
+After completing this module, you'll have a foundational understanding of how the Internet works, which will be invaluable as you progress in your web development journey. The next module will introduce you to digital literacy and learning tools that will help you navigate the technical landscape more effectively.
+
+## Assignment
+Create a document that:
+1. Maps out the journey of a web request from your browser to a server and back
+2. Compares at least three different web browsers and their market share
+3. Lists five common HTTP status codes and explains what each one means
+4. Explains the difference between HTTP and HTTPS and why the latter is important

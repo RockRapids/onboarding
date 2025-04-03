@@ -1,0 +1,272 @@
+---
+layout: post
+title:  "Module 4: Terminal Basics"
+date:   2025-04-02 8:00:00
+categories: Foundations
+---
+
+# Module 4: Terminal Basics
+
+## Overview
+This module introduces you to the command line interface (CLI) or terminal, a powerful tool that allows developers to interact with their computer directly through text commands. Learning to use the terminal efficiently is an essential skill for web developers as many development tools, frameworks, and processes rely on command line operations.
+
+## Learning Objectives
+By the end of this module, you will be able to:
+- Understand the purpose and advantages of using the command line
+- Navigate the file system confidently using terminal commands
+- Perform basic file and directory operations
+- Customize your terminal environment for improved productivity
+
+## Section 1: Introduction to Command Line Interfaces
+
+### What is a Terminal?
+A terminal (also called command line, command prompt, or shell) is a text-based interface for interacting with your computer's operating system. Instead of clicking buttons and navigating menus in a graphical user interface (GUI), you type commands that tell the computer exactly what to do.
+
+### Why Use the Terminal?
+While graphical interfaces are user-friendly, terminals offer several advantages for developers:
+
+- **Speed and Efficiency**: Many tasks can be performed more quickly using commands
+- **Automation**: Commands can be scripted to automate repetitive tasks
+- **Remote Access**: Servers often only provide command line access
+- **Precise Control**: Some operations are only available via command line
+- **Development Tools**: Many development tools are designed to be used from the terminal
+- **System Administration**: Managing system resources and configurations
+
+### Terminal vs. Shell
+It's important to understand the distinction:
+- **Terminal**: The application window where you type commands
+- **Shell**: The program that interprets and executes your commands
+
+Common shells include:
+- **Bash**: Default on most Linux distributions and older macOS versions
+- **Zsh**: Default on newer macOS versions
+- **PowerShell**: Microsoft's advanced shell for Windows
+- **Command Prompt**: Traditional Windows command processor
+
+### Accessing the Terminal
+
+#### On Windows:
+- Search for "Command Prompt" or "PowerShell"
+- Windows Terminal (modern terminal app for Windows)
+- Git Bash (comes with Git installation)
+- Windows Subsystem for Linux (WSL)
+
+#### On macOS:
+- Applications → Utilities → Terminal
+- Use Spotlight (Cmd+Space) and search for "Terminal"
+
+#### On Linux:
+- Often Ctrl+Alt+T (shortcut varies by distribution)
+- Search for "Terminal" in applications
+
+## Section 2: Basic Commands and Navigation
+
+### Command Structure
+Most commands follow a similar structure:
+
+```
+command [options] [arguments]
+```
+
+- **command**: The action you want to perform
+- **options**: Flags that modify how the command works (usually preceded by `-` or `--`)
+- **arguments**: What the command should act upon (files, directories, etc.)
+
+### Getting Help
+When you're unsure about a command:
+
+- `help command` or `command --help`: Display help information
+- `man command`: Show the manual page (detailed documentation)
+
+### Understanding the File System
+Files and directories in your computer are organized in a hierarchical structure. The top-level directory is called the "root directory" (represented by `/` on Unix-based systems and a drive letter like `C:\` on Windows).
+
+### Essential Navigation Commands
+
+#### Viewing Your Location
+- `pwd` (Print Working Directory): Shows your current location in the file system
+- `ls` (List): Shows the contents of the current directory
+  - `ls -l`: Detailed listing with permissions, size, date
+  - `ls -a`: Shows hidden files (starting with `.`)
+  - `ls -la`: Combines both options
+
+#### Changing Directories
+- `cd path/to/directory`: Change to specified directory
+- `cd ..`: Go up one level to the parent directory
+- `cd ~`: Go to your home directory
+- `cd /`: Go to the root directory
+- `cd -`: Go back to the previous directory
+
+#### Viewing File Content
+- `cat filename`: Display the contents of a file
+- `less filename`: View file contents with scrolling capability
+- `head filename`: Show the first 10 lines of a file
+- `tail filename`: Show the last 10 lines of a file
+- `grep pattern filename`: Search for a pattern in a file
+
+## Section 3: File System Operations
+
+### Working with Files
+
+#### Creating Files
+- `touch filename`: Create an empty file
+- `echo "text" > filename`: Create a file with content
+- `nano filename`: Open a simple text editor to create/edit files
+- `vi filename` or `vim filename`: Open the Vi/Vim text editor (more advanced)
+
+#### Copying and Moving
+- `cp source destination`: Copy a file
+- `mv source destination`: Move or rename a file
+- `mv oldname newname`: Rename a file
+
+#### Deleting Files
+- `rm filename`: Delete a file (be careful, this is permanent!)
+- `rm -i filename`: Delete with confirmation prompt
+- `rm -f filename`: Force delete without confirmation
+
+### Working with Directories
+
+#### Creating Directories
+- `mkdir directoryname`: Create a new directory
+- `mkdir -p parent/child/grandchild`: Create nested directories
+
+#### Removing Directories
+- `rmdir directoryname`: Remove an empty directory
+- `rm -r directoryname`: Remove a directory and its contents recursively
+- `rm -rf directoryname`: Force remove a directory and its contents (use with extreme caution!)
+
+### File Permissions
+Files and directories have permissions that control who can read, write, or execute them:
+
+- `chmod permissions filename`: Change file permissions
+  - Example: `chmod 755 script.sh` (owner can read/write/execute, others can read/execute)
+- `chown user:group filename`: Change file ownership
+
+### Viewing System Information
+- `df -h`: Show disk space usage in human-readable format
+- `du -h directoryname`: Show directory size
+- `top` or `htop`: Display system processes and resource usage
+- `whoami`: Display current user
+- `date`: Show current date and time
+
+## Section 4: Terminal Customization
+
+### Configuring Your Shell
+
+#### Configuration Files
+Depending on your shell, configuration files are loaded when you start a terminal:
+
+- **Bash**: `.bashrc` or `.bash_profile`
+- **Zsh**: `.zshrc`
+- **PowerShell**: `$PROFILE`
+
+These files can contain:
+- Aliases
+- Environment variables
+- Custom prompts
+- Functions
+- Path configurations
+
+#### Creating Aliases
+Aliases are shortcuts for longer commands:
+
+```bash
+# Add to your shell configuration file
+alias ll='ls -la'
+alias gs='git status'
+alias c='clear'
+```
+
+After adding aliases, restart your terminal or run `source ~/.bashrc` (or your specific config file).
+
+### Command History
+- `history`: Show command history
+- Up/Down arrow keys: Navigate through previous commands
+- `Ctrl+R`: Search command history
+- `!!`: Repeat the last command
+
+### Customizing Your Prompt
+You can customize how your terminal prompt looks by modifying the PS1 variable in your shell configuration file:
+
+```bash
+# Example for Bash/Zsh
+PS1='\u@\h:\w\$ '
+```
+
+This shows username@hostname:current_directory$
+
+### Terminal Productivity Tips
+
+#### Tab Completion
+- Press Tab to auto-complete commands, filenames, and directories
+- Double-tap Tab to show all possible completions
+
+#### Keyboard Shortcuts
+- `Ctrl+C`: Cancel the current command
+- `Ctrl+D`: Exit the current shell
+- `Ctrl+L`: Clear the screen
+- `Ctrl+A`: Move cursor to beginning of line
+- `Ctrl+E`: Move cursor to end of line
+- `Ctrl+U`: Delete from cursor to beginning of line
+- `Ctrl+K`: Delete from cursor to end of line
+
+#### Command Chaining
+- `command1 && command2`: Run command2 only if command1 succeeds
+- `command1 || command2`: Run command2 only if command1 fails
+- `command1 ; command2`: Run command1 then command2 regardless of result
+
+#### Input/Output Redirection
+- `command > file`: Redirect output to a file (overwrite)
+- `command >> file`: Append output to a file
+- `command < file`: Use file as input
+- `command1 | command2`: Pipe output of command1 as input to command2
+
+### Terminal Tools and Enhancements
+
+#### Terminal Multiplexers
+- **tmux** or **screen**: Allow multiple terminal sessions within one window
+- Features include split panes, tabs, and session persistence
+
+#### Enhanced Shells
+- **Oh My Zsh**: Framework for managing Zsh configuration
+- **Fish**: User-friendly shell with auto-suggestions and highlighting
+
+#### Colorized Output
+- Add syntax highlighting to commands like `ls`
+- Color-code file types for better visibility
+- Use tools like `lsd` or `exa` as modern alternatives to `ls`
+
+## Practical Exercises
+
+1. **Navigation Challenge**: Starting from your home directory, create a new directory called "terminal-practice", navigate into it, create a subdirectory, and then navigate back to your home directory.
+
+2. **File Operations**: Create three text files, copy one file to a different name, move another to a subdirectory, and delete the third file.
+
+3. **Command Chaining**: Create a directory, navigate into it, create a file with some text, and list the contents using a single command line with operators.
+
+4. **Custom Configuration**: Add at least three useful aliases to your shell configuration file and create a custom prompt that shows your username and current directory.
+
+## Additional Resources
+
+### Books
+- "The Linux Command Line" by William Shotts
+- "Learning the bash Shell" by Cameron Newham
+
+### Websites
+- [Explain Shell](https://explainshell.com/) - Explains command components
+- [Command Line Crash Course](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line)
+- [SS64](https://ss64.com/) - Command line reference
+
+### Interactive Learning
+- [Codecademy: Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
+- [Learn Shell](https://www.learnshell.org/)
+
+## Next Steps
+After completing this module, you'll have the fundamental skills needed to work with the command line, which is essential for web development workflows. The next module will introduce you to text editors and integrated development environments (IDEs) that you'll use for coding.
+
+## Assignment
+Create a shell script that:
+1. Creates a project directory structure with folders for HTML, CSS, JavaScript, and images
+2. Creates placeholder index.html, style.css, and script.js files with basic template content
+3. Displays a message showing the total number of files and directories created
+4. Includes comments explaining what each command does
